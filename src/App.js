@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import {useState} from "react";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './App.css';
 
+
 function App() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const onCopyText = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <section>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          We’re still assembling the full menu. Until the presentation shines brilliantly, send us an email to speak about employer branding, content marketing, and making your tech products lovable.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+        <CopyToClipboard text="hi@unusalsour.com" onCopy={onCopyText}>
+          <p className="mail">{isCopied ? "Copied!" : "hi@unusalsour.com"}</p>
+        </CopyToClipboard>
+      </section>
     </div>
   );
 }
