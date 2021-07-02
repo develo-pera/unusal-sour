@@ -21,8 +21,8 @@ function App() {
         </p>
 
 
-        <CopyToClipboard text="hi@unusalsour.com" onCopy={onCopyText}>
-          <p className="mail">{isCopied ? "Copied!" : "hi@unusalsour.com"}</p>
+        <CopyToClipboard text="hi@unusualsour.com" onCopy={onCopyText}>
+          <p className="mail">{isCopied ? "Copied!" : "hi@unusualsour.com"}</p>
         </CopyToClipboard>
       </section>
     </div>
